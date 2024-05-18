@@ -13,12 +13,12 @@ html {
 :root {
   --black: #000000;
   --white: #ffffff;
-  --teal: #68e7cc;
+  --seaGlass: #68e7cc;
   --lightBlue: #65d1e5;
   --darkBlue: #0a093f;
   --softRed: #ce3737;
   --orange: #d45e3b;
-  -charcoal: #222222;
+  -darkCharcoal: #222222;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -337,12 +337,45 @@ template {
 /* =============
     Base
 ============= */
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
 /* =============
     Typography
 ============= */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 /* =============
     Buttons
 ============= */
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.primary-contact-button {
+  background-color: var(--lightBlue);
+  padding: 8px 24px;
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: var(--darkCharcoal);
+  border-radius: 23px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.primary-contact-button:hover {
+  background-color: var(--darkCharcoal);
+  color: var(--white);
+}
+
 /* =============
     Forms
 ============= */
@@ -366,9 +399,160 @@ textarea {
 /* =============
     Navigation
 ============= */
+a:link, a:visited {
+  text-decoration: none;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+#main-nav {
+  background-color: var(--seaGlass);
+  padding: 24px 16px;
+  margin-top: 16px;
+}
+@media (min-width: 768px) {
+  #main-nav {
+    background-color: var(--white);
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  #main-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  #main-nav ul li {
+    border-right: 2px solid var(--darkCharcoal);
+  }
+}
+#main-nav ul li a:link, #main-nav ul li a:visited {
+  font-size: 1.5rem;
+  padding: 16px 0;
+  display: inline-block;
+  color: var(--darkCharcoal);
+}
+@media (min-width: 768px) {
+  #main-nav ul li a:link, #main-nav ul li a:visited {
+    padding: 0px 24px;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+}
+#main-nav ul li a:link:hover, #main-nav ul li a:link:active, #main-nav ul li a:visited:hover, #main-nav ul li a:visited:active {
+  color: var(--seaGlass);
+}
+#main-nav ul li:last-child {
+  border: none;
+}
+
 /* =============
     Header
 ============= */
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% auto;
+  grid-template-columns: 20% auto;
+      grid-template-areas: "burger-container contact-container" "main-nav main-nav";
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  header {
+    -ms-grid-columns: 60% auto;
+    grid-template-columns: 60% auto;
+        grid-template-areas: "logo-container logo-container" "burger-container contact-container";
+  }
+}
+header #burger-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: burger-container;
+  padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 768px) {
+  header #burger-container {
+    display: none;
+  }
+}
+header #burger-container button {
+  padding: 0;
+  color: var(--darkCharcoal);
+}
+header #contact-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: contact-container;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 16px;
+  height: 100%;
+}
+header #main-nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main-nav;
+}
+@media (min-width: 768px) {
+  header #main-nav {
+    display: block;
+  }
+}
+header #logo-container {
+  display: none;
+}
+@media (min-width: 768px) {
+  header #logo-container {
+    display: block;
+    grid-area: logo-container;
+    text-align: center;
+    padding-bottom: 18px;
+  }
+}
+@media (min-width: 768px) {
+  header #burger-container {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  header #contact-container {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  header #logo-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+}
+
+.hideMainNavAtMobile {
+  display: none;
+}
+
 /* =============
     Footer
 ============= */

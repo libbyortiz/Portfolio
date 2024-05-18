@@ -1,3 +1,54 @@
 /* =============
     Navigation
 ============= */
+
+a:link, a:visited{
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+#main-nav{
+    background-color: var(--seaGlass);
+    padding: 24px 16px;
+    margin-top: 16px;
+
+    @include md{
+        background-color: var(--white);
+        margin-top: 0;
+    }
+
+    ul{
+        @include md{
+            display: flex;
+            align-items: center;
+        }
+        li{
+
+            @include md{
+                border-right: 2px solid var(--darkCharcoal);
+            }
+
+            a:link, a:visited{
+                font-size: rem-calc(24);
+                padding: 16px 0;
+                display: inline-block;
+                color: var(--darkCharcoal);
+
+                @include md{
+                    padding: 0px 24px;
+                    font-weight: 600;
+                    font-size: rem-calc(18);
+                }
+
+                &:hover, &:active{
+                    color: var(--seaGlass);
+                }
+            }
+        }
+
+        li:last-child{
+            border: none;
+        }
+
+    }
+}
