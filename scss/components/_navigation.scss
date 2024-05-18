@@ -41,7 +41,9 @@ a:link, a:visited{
                 }
 
                 &:hover, &:active{
-                    color: var(--seaGlass);
+                    @include md{
+                        color: var(--seaGlass);  
+                    }
                 }
             }
         }
