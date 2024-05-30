@@ -13,12 +13,12 @@ html {
 :root {
   --black: #000000;
   --white: #ffffff;
-  --seaGlass: #68e7cc;
-  --lightBlue: #65d1e5;
-  --darkBlue: #0a093f;
-  --softRed: #ce3737;
-  --orange: #d45e3b;
+  --deviledEgg: #ecc566;
+  --twilight: #33268f;
+  --barney: #d268d7;
+  --sherbet: #e39952;
   --darkCharcoal: #222222;
+  --snidely: #551a8b;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -371,11 +371,11 @@ button {
 }
 
 .primary-contact-button {
-  background-color: var(--lightBlue);
+  background-color: var(--snidely);
   padding: 8px 24px;
   font-weight: 800;
   font-size: 1.125rem;
-  color: var(--darkCharcoal);
+  color: var(--white);
   border-radius: 23px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
@@ -416,7 +416,7 @@ a:link, a:visited {
 }
 
 #main-nav {
-  background-color: var(--seaGlass);
+  background-color: var(--sherbet);
   padding: 24px 16px;
 }
 @media (min-width: 768px) {
@@ -455,7 +455,7 @@ a:link, a:visited {
 }
 @media (min-width: 768px) {
   #main-nav ul li a:link:hover, #main-nav ul li a:link:active, #main-nav ul li a:visited:hover, #main-nav ul li a:visited:active {
-    color: var(--seaGlass);
+    color: var(--twilight);
   }
 }
 #main-nav ul li:last-child {
@@ -466,8 +466,6 @@ a:link, a:visited {
     Header
 ============= */
 header {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 20% auto;
   grid-template-columns: 20% auto;
       grid-template-areas: "burger-container contact-container" "main-nav main-nav";
@@ -537,6 +535,7 @@ header #main-nav {
 }
 header #logo-container {
   display: none;
+  font-size: 40px;
 }
 @media (min-width: 768px) {
   header #logo-container {
@@ -574,25 +573,25 @@ header #logo-container {
 ============= */
 #hero {
   background-image: url(../img/homepage/hero.jpg);
-  height: 50vh;
+  height: 25vh;
   background-size: cover;
   background-position: center;
   margin-top: 74px;
 }
 @media (min-width: 768px) {
   #hero {
-    height: 60vh;
+    height: 25vh;
     margin-top: 125px;
   }
 }
 @media (min-width: 1024px) {
   #hero {
-    height: 70vh;
+    height: 45vh;
   }
 }
 @media (min-width: 1200px) {
   #hero {
-    height: 85vh;
+    height: 45vh;
   }
 }
 
@@ -606,8 +605,8 @@ header #logo-container {
   #home {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto 768px auto;
-    grid-template-columns: auto 768px auto;
+    -ms-grid-columns: auto 900px auto;
+    grid-template-columns: auto 900px auto;
         grid-template-areas: ". home .";
   }
 }
@@ -631,21 +630,21 @@ header #logo-container {
   }
 }
 #home > div #home-top #profile-img {
-  height: 200px;
+  height: 100px;
   width: 200px;
   background-image: url("../img/Homepage/magic.jpeg");
+  background-size: cover;
   background-position: center;
-  border-radius: 100%;
   margin: 0 auto;
 }
-#home > div #home-top h1 {
+#home > div #home-top #home-quote {
   margin: 40px 0 25px;
   color: var(--darkCharcoal);
   font-family: "Comforta", sans-serif;
-  font-size: 1.9375rem;
+  font-size: 1.875rem;
 }
 @media (min-width: 768px) {
-  #home > div #home-top h1 {
+  #home > div #home-top {
     margin: 40px 0 65px;
     font-size: 3.4375rem;
   }
@@ -682,4 +681,22 @@ header #logo-container {
   font-weight: 600;
   text-align: justify;
   line-height: 1.25rem;
+}
+
+#about #about-me {
+  margin: 40px 0 25px;
+  color: var(--darkCharcoal);
+  font-family: "Comforta", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  text-align: justify;
+  padding: 0 3vw;
+}
+#about #headshot {
+  height: 200px;
+  width: 200px;
+  background-image: url("../img/About/alphshot.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
 }

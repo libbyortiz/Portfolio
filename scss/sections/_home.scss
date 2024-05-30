@@ -8,11 +8,11 @@
 
     @include md{
         display: grid;
-        grid-template-columns: auto 768px auto;
+        grid-template-columns: auto 900px auto;
         grid-template-areas: ". home .";
     }
 
-    >div{
+   >div{
         
         @include md{
             grid-area: home;
@@ -26,24 +26,27 @@
             }
 
             #profile-img{
-                height: 200px;
+                height: 100px;
                 width: 200px;
                 background-image: url("../img/Homepage/magic.jpeg");
+                background-size: cover;
                 background-position: center;
-                border-radius: 100%;
+                //border-radius: 100%;
                 margin: 0 auto;
             }
-            h1{
+            #home-quote{
                 margin: 40px 0 25px;
                 color: var(--darkCharcoal);
                 font-family: "Comforta", sans-serif;
-                font-size: rem-calc(31);
+                font-size: rem-calc(30);
+            }
+            
 
                 @include md{
                     margin: 40px 0 65px;
                     font-size: rem-calc(55);
                 }
-            }
+            
             p{
                 font-size: rem-calc(17);
                 margin-bottom: 24px;
@@ -54,6 +57,7 @@
                 }
             }
         }
+        
 
         #home-bottom{
 
@@ -76,5 +80,28 @@
                 line-height: rem-calc(20);
             }
         }
+    }
+}
+
+#about{
+
+    #about-me{
+        margin: 40px 0 25px;
+        color: var(--darkCharcoal);
+        font-family: "Comforta", sans-serif;
+        font-size: rem-calc(17);
+        font-weight: 400;
+        text-align: justify; 
+        padding: 0 3vw;
+    }
+
+    #headshot{
+        height: 200px;
+        width: 200px;
+        background-image: url("../img/About/alphshot.jpg");
+        background-size: cover;
+        background-position: center;
+        //border-radius: 100%;
+        margin: 0 auto;
     }
 }

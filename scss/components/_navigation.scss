@@ -8,7 +8,7 @@ a:link, a:visited{
 }
 
 #main-nav{
-    background-color: var(--seaGlass);
+    background-color: var(--sherbet);
     padding: 24px 16px;
 
     @include md{
@@ -41,7 +41,7 @@ a:link, a:visited{
 
                 &:hover, &:active{
                     @include md{
-                        color: var(--seaGlass);  
+                        color: var(--twilight);  
                     }
                 }
             }

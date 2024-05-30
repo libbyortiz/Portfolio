@@ -3,7 +3,6 @@
 ============= */
 
 header{
-    display: grid;
     grid-template-columns: 20% auto;
     grid-template-areas: 
     "burger-container contact-container"
@@ -60,6 +59,7 @@ header{
     
     #logo-container{
         display: none;
+        font-size: 40px;
 
         @include md{
             display: block;
